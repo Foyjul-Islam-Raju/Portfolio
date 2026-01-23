@@ -1,0 +1,909 @@
+:root {
+  --bg: #0f0f0f;
+  --text: #e0e0e0;
+  --purple: #c084fc;
+  --purple-dark: #9333ea;
+  --purple-glow: rgba(192, 132, 252, 0.25);
+  --gray: #1e1e1e;
+  --dot: rgba(192, 132, 252, 0.12);
+}
+
+/* ================= RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.main {
+  height: 100vh;
+  margin-left: 80px;
+  margin-right: 90px;
+  padding: 4rem 5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+/* ===== About layout with image ===== */
+.about-flex {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* LEFT image */
+.about-image {
+  flex: 0 0 260px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid rgba(180, 100, 255, 0.4);
+  box-shadow: 0 0 25px rgba(180, 100, 255, 0.35);
+}
+
+/* RIGHT text */
+.about-info {
+  flex: 1;
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.action-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  font-family: "Times New Roman", Times, serif;
+  background: linear-gradient(135deg, #656c78, #4b5563);
+  color: white;
+  padding: 1rem 2.8rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.4s;
+  box-shadow: 0 8px 25px var(--purple-glow);
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px var(--purple-glow);
+}
+
+.hire-btn {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+}
+
+/* ================= HERO TEXT ================= */
+
+h1 {
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--purple), #d8b4fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.2rem;
+}
+
+p {
+  font-size: 1.4rem;
+  max-width: 1000px;
+  margin: 0.75rem auto;
+  color: #e7e6e6;
+}
+
+/*=================== Social Icon =================*/
+.social-icons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  width: 52px;
+  height: 52px;
+  background: #ffffff;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+  background: var(--purple);
+  color: white;
+}
+
+/* ================= About Text ================= */
+.about-card {
+  max-width: 1000px;
+  /* margin: 3rem auto; */
+  padding: 1rem 3rem;
+  border-radius: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* soft glowing edge */
+.about-card::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.about-text {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.25rem;
+  line-height: 1.65;
+  letter-spacing: 0.5px;
+  color: #e7e6e6;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* Main name highlight */
+.highlight {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+/* Job role emphasis */
+.role {
+  background: linear-gradient(90deg, var(--purple), #d8b4fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Soft emphasis (not too bold) */
+.highlight-soft {
+  color: #f1eaff;
+  font-weight: 500;
+}
+
+/* Tech stack pill-style highlight */
+.tech {
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
+  background: rgba(192, 132, 252, 0.12);
+  color: #e9d5ff;
+  font-weight: 500;
+}
+
+/* Hover glow effect */
+.about-card:hover {
+  box-shadow: 0 25px 70px rgba(192, 132, 252, 0.25);
+  transform: translateY(-4px);
+  transition: all 0.4s ease;
+}
+
+/* ================= Home Page Text ================= */
+.text-2 {
+  font-size: 2rem;
+  margin: 2.5rem 0 0.5rem;
+  color: #ccc;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.text-3 {
+  font-size: 2rem;
+  margin: 0.5rem 0 2.5rem;
+  color: #ccc;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.typing-2,
+.typing-3 {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.top-left-text {
+  position: fixed;
+  top: 30px;
+  left: 50px;
+  z-index: 999;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--purple);
+  text-decoration: none;
+}
+
+.top-left-text a,
+.top-left-text a:visited,
+.top-left-text a:active,
+.top-left-text a:focus {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+.top-left-text a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-left-text a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ================= RIGHT VERTICAL NAVBAR ================= */
+
+.right-nav {
+  position: fixed;
+  right: 0;
+  width: 150px;
+  height: 100%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  background: var(--gray);
+  border-left: 1px solid #2a2a2a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2em;
+  padding: 2rem 0;
+  z-index: 100;
+}
+
+.right-nav .nav-link {
+  color: #ccc;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 1rem 0.5rem;
+  border-radius: 12px;
+  transition: all 0.35s ease;
+  letter-spacing: 0.5px;
+}
+
+.right-nav .nav-link:hover {
+  color: white;
+  background: rgba(192, 132, 252, 0.2);
+  box-shadow: 0 0 20px var(--purple-glow);
+  /* transform: rotate(360deg) translateY(-4px); */
+}
+
+.right-nav .nav-link.active {
+  color: white;
+  background: linear-gradient(to bottom, var(--purple), var(--purple-dark));
+  box-shadow: 0 6px 30px var(--purple-glow);
+}
+
+/* ================= Achievement ================= */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--purple);
+  text-shadow: 0 0 15px var(--purple-glow);
+}
+
+/* ================= SKILLS ================= */
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7.5px;
+}
+
+.skill {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+.skill.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.6rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.skill-item {
+  background: rgba(30, 30, 30, 0.7);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(192, 132, 252, 0.18);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.skill-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px var(--purple-glow);
+}
+
+.skill-logo {
+  width: 44px;
+  margin-bottom: 0.8rem;
+}
+
+.progress {
+  width: 100%;
+  height: 8px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(to right, var(--purple), #d8b4fe);
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline {
+  max-width: 1000px;
+  width: 100%;
+  /* margin: auto; */
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.75),
+    rgba(18, 18, 18, 0.75)
+  );
+  margin: 1rem 0;
+  padding: 1.2rem 1.6rem;
+  border-left: 5px solid var(--purple);
+  border-radius: 16px;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--purple), var(--purple-dark));
+}
+
+.timeline-item:hover {
+  transform: translateX(14px) scale(1.01);
+  box-shadow: 0 15px 40px var(--purple-glow);
+}
+
+.timeline-date {
+  max-width: 80px;
+  color: #6fdcf0;
+  font-weight: 800;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-content h2 {
+  margin-bottom: 6px;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+.timeline-content p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: #d6d6d6;
+}
+
+.experience-points {
+  margin-top: 10px;
+  padding-left: 25px;
+}
+
+.experience-points li {
+  margin-bottom: 2px;
+  color: #cfcfcf;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  list-style-type: square;
+}
+
+/* ================= PROJECTS ================= */
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  height: 100%;
+}
+
+.section-title.small {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  color: #e0e0e0;
+}
+
+.project-img {
+  width: 40px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.project-tech-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.github-link {
+  color: #c084fc;
+  font-size: 1.1rem;
+  transition: 0.25s;
+}
+
+.github-link:hover {
+  color: #6fdcf0;
+  transform: scale(1.15);
+}
+
+.left-panel,
+.right-panel {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-item {
+  background: rgba(40, 40, 50, 0.4);
+  padding: 20px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(100, 100, 120, 0.25);
+  transition: all 0.22s ease;
+}
+
+.project-item:hover {
+  background: rgba(50, 50, 65, 0.55);
+  border-color: rgba(111, 220, 240, 0.3);
+  transform: translateY(-2px);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1px;
+}
+
+.project-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.project-links {
+  display: flex;
+  gap: 2px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.project-links a {
+  color: #c084fc;
+  font-size: 1.25rem;
+  transition: all 0.25s;
+}
+
+.project-links a:hover {
+  color: #6fdcf0;
+  transform: scale(1.18);
+}
+
+.project-desc {
+  font-size: 1rem;
+  line-height: 1.45;
+  color: #cccccc;
+  margin: 0 0 14px 0;
+  font-family: "Times New Roman", Times, serif;
+  text-align: justify;
+}
+
+.project-tech {
+  font-size: 0.82rem;
+  color: #6fdcf0;
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+}
+
+/* Publications */
+.publication-card {
+  background: rgba(30, 30, 30, 0.65);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  border-left: 4px solid var(--purple, #c084fc);
+  transition: all 0.2s;
+  font-family: "Times New Roman", Times, serif;
+  text-align: justify;
+}
+
+.publication-card:hover {
+  background: rgba(40, 30, 50, 0.75);
+  transform: translateX(6px) scale(1);
+  box-shadow: 0 12px 40px var(--purple-glow);
+}
+
+.publication-card.upcoming {
+  border-left-color: #6fdcf0;
+  opacity: 0.92;
+}
+
+.publication-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.05rem;
+  color: #e0e0e0;
+}
+
+.publication-card p {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #ddd;
+  margin: 0 0 10px 0;
+}
+
+.pub-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.78rem;
+}
+
+.pub-meta span {
+  color: #6fdcf0;
+}
+
+.pub-year {
+  font-weight: 600;
+  color: #aaaaff !important;
+}
+
+/* icon */
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.small-img {
+  width: 80px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* ================= BACKGROUND EFFECTS ================= */
+
+.bg-geometric {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  z-index: 1;
+}
+
+.bg-geometric .frame {
+  position: absolute;
+  border: 1.5px solid var(--purple);
+}
+
+.frame1 {
+  top: 15%;
+  left: 10%;
+  width: 50%;
+  height: 45%;
+  transform: rotate(-12deg);
+}
+.frame2 {
+  top: 40%;
+  right: 12%;
+  width: 45%;
+  height: 50%;
+  transform: rotate(-12deg);
+}
+.frame3 {
+  bottom: 10%;
+  left: 14%;
+  width: 45%;
+  height: 40%;
+}
+.frame4 {
+  top: 10%;
+  right: 21%;
+  width: 45%;
+  height: 50%;
+  transform: rotate(12deg);
+}
+
+.bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at 15px 15px,
+    var(--dot) 2px,
+    transparent 0
+  );
+  background-size: 50px 50px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+/* ──────────────────────────────────────────────
+   RESPONSIVE + SCROLL CONTROL
+─────────────────────────────────────────────── */
+
+/* Desktop: no page scrollbar, internal scroll in .main */
+@media (min-width: 1025px) {
+  html,
+  body {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .main {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 80px;
+    margin-right: 90px;
+    padding: 4rem 5rem 6rem; /* extra bottom padding to prevent nav cutoff */
+  }
+
+  /* Hide scrollbar visually but keep scrolling */
+  .main::-webkit-scrollbar {
+    display: none;
+  }
+  .main {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Tablet and smaller – normal scrolling + bottom nav */
+@media (max-width: 1024px) {
+  html,
+  body {
+    overflow-y: auto;
+    height: auto;
+  }
+
+  .main {
+    height: auto;
+    min-height: 100vh;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 6rem 2rem 10rem;
+  }
+
+  .right-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    gap: 1.2rem;
+    border-top: 1px solid #2a2a2a;
+    border-left: none;
+  }
+
+  .right-nav .nav-link {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .top-left-text {
+    left: 25px;
+    top: 20px;
+    font-size: 1.9rem;
+  }
+
+  /* Stack about image + text on smaller screens */
+  .about-flex {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .about-image {
+    flex: 0 0 auto;
+  }
+
+  .about-image img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 7rem 1.8rem 11rem;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .about-card {
+    padding: 2rem 1.8rem;
+  }
+
+  .about-text {
+    font-size: 1.05rem;
+    text-align: left;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-date {
+    text-align: left;
+    min-width: auto;
+    margin-bottom: 6px;
+    color: var(--purple);
+  }
+
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 6.5rem 1.4rem 12rem;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .social-icons a {
+    width: 48px;
+    height: 48px;
+  }
+
+  .about-image img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Improve justified text on all screens – especially narrow ones */
+.about-text,
+.about-info p,
+.about-info {
+  text-align: justify;
+  text-align-last: left; /* prevents ugly stretched last line */
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-spacing: 0.015em;
+  line-height: 1.55;
+}
+
+/* Fine-tune for smaller screens */
+@media (max-width: 1024px) {
+  .about-text,
+  .about-info p {
+    line-height: 1.5;
+    font-size: clamp(1.05rem, 3.2vw, 1.15rem);
+  }
+}
+
+/* Better handling for 7 items in bottom nav */
+@media (max-width: 1024px) {
+  .right-nav {
+    justify-content: flex-start; /* start from left instead of even spacing */
+    overflow-x: auto; /* allow horizontal scroll if screen is very narrow */
+    padding: 1rem 1.5rem;
+    gap: 1.4rem;
+    scrollbar-width: thin; /* nicer scrollbar on Firefox */
+  }
+
+  .right-nav::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .right-nav::-webkit-scrollbar-thumb {
+    background: var(--purple);
+    border-radius: 3px;
+  }
+
+  .right-nav .nav-link {
+    font-size: 0.92rem; /* slightly smaller so 7 fit better */
+    padding: 0.6rem 1rem;
+    min-width: 70px;
+    white-space: nowrap; /* prevent text wrapping */
+  }
+}
